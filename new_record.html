@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Create New Health Record</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label for="patient_name" class="form-label">Patient Name</label>
+        <input type="text" class="form-control" id="patient_name" name="patient_name" required>
+    </div>
+    
+    <div class="mb-3">
+        <label for="date_of_birth" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+    </div>
+    
+    <div class="mb-3">
+        <label for="medical_condition" class="form-label">Medical Condition</label>
+        <input type="text" class="form-control" id="medical_condition" name="medical_condition" required>
+    </div>
+    
+    <div class="mb-3">
+        <label for="treatment" class="form-label">Treatment</label>
+        <textarea class="form-control" id="treatment" name="treatment" rows="3" required></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Create Record</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
